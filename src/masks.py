@@ -1,5 +1,6 @@
 """modul with functions to mask bank account and card numbers"""
 
+
 def get_mask_card_number(card_number: int) -> str:
     """function to get masked bank card number"""
     str_card_number = str(card_number)

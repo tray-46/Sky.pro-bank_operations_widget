@@ -46,7 +46,7 @@ number_to_mask = "Счет 73654108430135874305"
 print(f"\nAccount|Card number:\t{number_to_mask}")
 print(f"Masked number:\t\t\t{widget.mask_account_card(number_to_mask)}")
 
-#get_date test
+# get_date test
 datetime_string = "2024-03-11T02:26:16.671407"
 print(f"\ndatetime string is:\t{datetime_string}")
 print(f"Formated date is:\t{widget.get_date(datetime_string)}")
