@@ -1,7 +1,9 @@
 """modul with basic functions of widget"""
+
 import datetime
 
 from src import masks
+
 
 def mask_account_card(string_to_mask: str) -> str:
     """function to get masked bank account or card number"""
