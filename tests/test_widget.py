@@ -23,5 +23,35 @@ def test_mask_account_card(number_to_mask, expected):
     assert widget.mask_account_card(number_to_mask) == expected
 
 
-def test_get_date():
-    assert widget.get_date("2024-03-11T02:26:16.671407") == "11.03.2024"
+@pytest.mark.parametrize("invalid_number", ["", "12345678901234567890", "Счёт12345678901234567890"])
+def test_mask_account_card_value_error(invalid_number):
+    with pytest.raises(ValueError):
+        widget.mask_account_card(invalid_number)
+
+@pytest.mark.parametrize(
+    "invalid_number", ["Visa Platinum 70007922896063611",
+                       "Maestro 1",
+                       "Maestro -1",
+                       "Счет 736541084301358743051",
+                       "Счет 1",
+                       "Счет -1"
+     ]
+)
+def test_mask_account_card_invalid_numbers(invalid_number):
+    with pytest.raises(ValueError):
+        widget.mask_account_card(invalid_number)
+
+@pytest.mark.parametrize(
+    "invalid_date", ["2024-11T02:26:16.671407",
+                       "2024-03-11",
+                       "2-03-11T02:26:16.671407",
+     ]
+)
+def test_get_date_invalid_date_format(invalid_date):
+    with pytest.raises(ValueError):
+        widget.get_date(invalid_date)
+
+
+def test_get_date_invalid_type():
+    with pytest.raises(TypeError):
+        widget.get_date(2026)
