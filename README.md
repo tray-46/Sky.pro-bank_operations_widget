@@ -18,9 +18,6 @@
 ## About the project
 A training project - implementing the backend portion of a banking widget displaying a list of the most recent successfully completed transactions
 
-Project was tested with pytest framework and got 100% code coverage.  
-[Coverage report](htmlcov/index.html)   
-
 ### Build with
 * [![Python](https://img.shields.io/badge/Python%20IDLE-3776AB?logo=python&logoColor=fff)](https://python.org/)
 * [![PyCharm](https://img.shields.io/badge/PyCharm-000?logo=pycharm&logoColor=fff)](https://www.jetbrains.com/pycharm/)
@@ -37,6 +34,12 @@ To clone the repository use the following links:
 ```
     git@github.com:tray-46/Sky.pro-bank_operations_widget.git
 ```
+
+## Testing
+
+Project was tested with pytest framework and got 100% code coverage.  
+[Coverage report](htmlcov/index.html)   
+
 
 ## Usage
 The following functions are implemented in the project:
