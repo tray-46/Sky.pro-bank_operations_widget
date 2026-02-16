@@ -35,6 +35,12 @@ To clone the repository use the following links:
     git@github.com:tray-46/Sky.pro-bank_operations_widget.git
 ```
 
+## Testing
+
+Project was tested with pytest framework and got 100% code coverage.  
+[Coverage report](htmlcov/index.html)   
+
+
 ## Usage
 The following functions are implemented in the project:
 1. function to get masked bank card number:  
