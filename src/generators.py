@@ -1,22 +1,28 @@
 """module with functions for working with transaction arrays"""
+
 from typing import Generator, Iterator
 
 
 def filter_by_currency(transactions_list: list[dict], targeted_currency_code: str) -> Iterator[dict]:
     """function to get iterator with transactions filtered by currency"""
-    if not isinstance(transactions_list, list) or \
-            not all(isinstance(transaction, dict) for transaction in transactions_list) or \
-            not isinstance(targeted_currency_code, str):
+    if (
+        not isinstance(transactions_list, list)
+        or not all(isinstance(transaction, dict) for transaction in transactions_list)
+        or not isinstance(targeted_currency_code, str)
+    ):
         raise TypeError("Invalid transactions list")
-    return filter(lambda transaction:
-                  transaction.get("operationAmount", {})
-                  .get("currency", {}).get("code", "NOT_SPECIFIED") == targeted_currency_code, transactions_list)
+    return filter(
+        lambda transaction: transaction.get("operationAmount", {}).get("currency", {}).get("code", "NOT_SPECIFIED")
+        == targeted_currency_code,
+        transactions_list,
+    )
 
 
 def transaction_descriptions(transactions_list: list[dict]) -> Generator[str, None, None]:
     """generator function to get transactions descriptions"""
-    if not isinstance(transactions_list, list) or \
-            not all(isinstance(transaction, dict) for transaction in transactions_list):
+    if not isinstance(transactions_list, list) or not all(
+        isinstance(transaction, dict) for transaction in transactions_list
+    ):
         raise TypeError("Invalid transactions list")
     for description in (transaction.get("description", "NO_DESCRIPTION") for transaction in transactions_list):
         yield description
