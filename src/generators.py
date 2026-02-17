@@ -28,12 +28,12 @@ def transaction_descriptions(transactions_list: list[dict]) -> Generator[str, No
         yield description
 
 
-def card_number_generator(start_number: int, stop_number: int) -> Generator[str, None, None]:
+def card_number_generator(start: int, stop: int) -> Generator[str, None, None]:
     """generator function for generating card numbers within a given range"""
-    if not isinstance(start_number, int) or not isinstance(stop_number, int):
+    if not isinstance(start, int) or not isinstance(stop, int):
         raise TypeError("Invalid range parameters")
-    if start_number < 1 or stop_number < 1 or start_number > stop_number or stop_number > 9999999999999999:
+    if start < 1 or stop < 1 or start > stop or stop > 9999999999999999:
         raise ValueError("Invalid range parameters")
-    for number in range(start_number, stop_number + 1):
+    for number in range(start, stop + 1):
         card_number = f"{number:016}"
         yield f"{card_number[0:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
