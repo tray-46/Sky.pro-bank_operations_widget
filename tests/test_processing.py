@@ -39,7 +39,7 @@ def test_filter_by_state(bank_operation_list: list[dict], targeted_state: str, e
 
 def test_filter_by_state_no_args() -> None:
     with pytest.raises(TypeError):
-        processing.filter_by_state()
+        processing.filter_by_state() # type: ignore
 
 
 def test_filter_by_state_invalid_list_dict(invalid_bank_operation_list: list) -> None:
@@ -75,7 +75,7 @@ def test_sort_by_date_asc(bank_operation_list: list[dict]) -> None:
 
 def test_sort_by_date_no_args() -> None:
     with pytest.raises(TypeError):
-        processing.sort_by_date()
+        processing.sort_by_date() # type: ignore
 
 
 def test_sort_by_date_invalid_list_dict(invalid_bank_operation_list: list) -> None:
@@ -85,7 +85,7 @@ def test_sort_by_date_invalid_list_dict(invalid_bank_operation_list: list) -> No
 
 def test_sort_by_date_type_error(bank_operation_list: list[dict]) -> None:
     with pytest.raises(TypeError):
-        processing.sort_by_date(bank_operation_list, False)
+        processing.sort_by_date(bank_operation_list, False) # type: ignore
 
 
 def test_sort_by_date_date_type_error() -> None:
