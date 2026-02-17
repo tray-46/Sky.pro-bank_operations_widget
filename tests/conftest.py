@@ -29,7 +29,7 @@ def invalid_bank_operation_list() -> list:
 
 
 @pytest.fixture
-def transactions_list():
+def transactions_list() -> list:
     return [
         {
             "id": 939719570,

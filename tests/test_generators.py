@@ -42,7 +42,7 @@ from src import generators
         ("EUR", []),
     ],
 )
-def test_filter_by_currency_base(transactions_list, targeted_currency, expected) -> None:
+def test_filter_by_currency_base(transactions_list: list[dict], targeted_currency: str, expected: list[dict]) -> None:
     assert list(generators.filter_by_currency(transactions_list, targeted_currency)) == expected
 
 
@@ -75,17 +75,17 @@ def test_filter_by_currency_no_args() -> None:
         123,
     ]
 )
-def test_filter_by_currency_invalid_transactions_list(invalid_transactions_list) -> None:
+def test_filter_by_currency_invalid_transactions_list(invalid_transactions_list: list[dict]) -> None:
     with pytest.raises(TypeError):
         generators.filter_by_currency(invalid_transactions_list, "USD")
 
 
-def test_filter_by_currency_invalid_currency_code(transactions_list) -> None:
+def test_filter_by_currency_invalid_currency_code(transactions_list: list[dict]) -> None:
     with pytest.raises(TypeError):
         generators.filter_by_currency(transactions_list, 123)  # type: ignore
 
 
-def test_filter_by_currency_no_keys(invalid_transactions_list) -> None:
+def test_filter_by_currency_no_keys(invalid_transactions_list: list[dict]) -> None:
     expected = [
         {  # no currency code
            "id": 142264268,
@@ -114,7 +114,7 @@ def test_filter_by_currency_no_keys(invalid_transactions_list) -> None:
 
 
 # transaction_descriptions tests
-def test_transaction_descriptions_base(transactions_list):
+def test_transaction_descriptions_base(transactions_list: list[dict]) -> None:
     expected = [
         "Перевод организации",
         "Перевод со счета на счет",
@@ -154,13 +154,13 @@ def test_transaction_descriptions_no_args() -> None:
         123,
     ]
 )
-def test_transaction_descriptions_invalid_transactions_list(invalid_transactions_list) -> None:
+def test_transaction_descriptions_invalid_transactions_list(invalid_transactions_list: list[dict]) -> None:
     transaction_descriptions = generators.transaction_descriptions(invalid_transactions_list)
     with pytest.raises(TypeError):
         next(transaction_descriptions)
 
 
-def test_transaction_descriptions_no_key(invalid_transactions_list) -> None:
+def test_transaction_descriptions_no_key(invalid_transactions_list: list[dict]) -> None:
     transaction_descriptions = generators.transaction_descriptions(invalid_transactions_list)
     assert next(transaction_descriptions) == 'NO_DESCRIPTION'
     assert next(transaction_descriptions) == 'Перевод со счета на счет'
@@ -170,7 +170,7 @@ def test_transaction_descriptions_no_key(invalid_transactions_list) -> None:
 
 
 # card_number_generator tests
-def test_card_number_generator_base():
+def test_card_number_generator_base() -> None:
     card_numbers = generators.card_number_generator(1234123412341200, 1234123412341204)
     assert next(card_numbers) == "1234 1234 1234 1200"
     assert next(card_numbers) == "1234 1234 1234 1201"
@@ -181,12 +181,12 @@ def test_card_number_generator_base():
         next(card_numbers)
 
 
-def test_card_number_generator_no_args():
+def test_card_number_generator_no_args() -> None:
     with pytest.raises(TypeError):
         generators.card_number_generator()  # type: ignore
 
 
-def test_card_number_generator_invalid_args():
+def test_card_number_generator_invalid_args() -> None:
     with pytest.raises(TypeError):
         next(generators.card_number_generator("123", "456"))  # type: ignore
 
@@ -201,19 +201,19 @@ def test_card_number_generator_invalid_args():
         (99999999999999991, 99999999999999992)
     ]
 )
-def test_card_number_generator_invalid_range(start_number, stop_number):
+def test_card_number_generator_invalid_range(start_number: int , stop_number: int) -> None:
     with pytest.raises(ValueError):
         next(generators.card_number_generator(start_number, stop_number))
 
 
-def test_card_number_generator_min():
+def test_card_number_generator_min() -> None:
     card_numbers = generators.card_number_generator(1, 1)
     assert next(card_numbers) == "0000 0000 0000 0001"
     with pytest.raises(StopIteration):
         next(card_numbers)
 
 
-def test_card_number_generator_max():
+def test_card_number_generator_max() -> None:
     card_numbers = generators.card_number_generator(9999999999999999, 9999999999999999)
     assert next(card_numbers) == "9999 9999 9999 9999"
     with pytest.raises(StopIteration):
