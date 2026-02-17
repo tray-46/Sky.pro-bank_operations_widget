@@ -30,8 +30,7 @@ def invalid_bank_operation_list() -> list:
 
 @pytest.fixture
 def transactions_list():
-    return\
-    [
+    return [
         {
             "id": 939719570,
             "state": "EXECUTED",

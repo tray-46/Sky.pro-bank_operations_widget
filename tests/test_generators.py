@@ -4,6 +4,7 @@ import pytest
 
 from src import generators
 
+
 # filter_by_currency tests
 @pytest.mark.parametrize(
     "targeted_currency, expected",
@@ -47,12 +48,12 @@ def test_filter_by_currency_base(transactions_list, targeted_currency, expected)
 
 def test_filter_by_currency_no_args() -> None:
     with pytest.raises(TypeError):
-        generators.filter_by_currency() # type: ignore
+        generators.filter_by_currency()  # type: ignore
 
 
 @pytest.mark.parametrize(
     "invalid_transactions_list",
-[
+    [
         [
             {
                 "id": 939719570,
@@ -81,34 +82,34 @@ def test_filter_by_currency_invalid_transactions_list(invalid_transactions_list)
 
 def test_filter_by_currency_invalid_currency_code(transactions_list) -> None:
     with pytest.raises(TypeError):
-        generators.filter_by_currency(transactions_list, 123) # type: ignore
+        generators.filter_by_currency(transactions_list, 123)  # type: ignore
 
 
 def test_filter_by_currency_no_keys(invalid_transactions_list) -> None:
     expected = [
-                   {  # no currency code
-                       "id": 142264268,
-                       "state": "EXECUTED",
-                       "date": "2019-04-04T23:20:05.206878",
-                       "operationAmount": {
-                           "amount": "79114.93",
-                           "currency": {
-                               "name": "USD",
-                           }
-                       },
-                       "description": "Перевод со счета на счет",
-                       "from": "Счет 19708645243227258542",
-                       "to": "Счет 75651667383060284188"
-                   },
-                   {  # no operation amount
-                       "id": 873106923,
-                       "state": "EXECUTED",
-                       "date": "2019-03-23T01:09:46.296404",
-                       "description": "Перевод со счета на счет",
-                       "from": "Счет 44812258784861134719",
-                       "to": "Счет 74489636417521191160"
-                   },
-               ]
+        {  # no currency code
+           "id": 142264268,
+           "state": "EXECUTED",
+           "date": "2019-04-04T23:20:05.206878",
+           "operationAmount": {
+               "amount": "79114.93",
+               "currency": {
+                   "name": "USD",
+               }
+           },
+            "description": "Перевод со счета на счет",
+            "from": "Счет 19708645243227258542",
+            "to": "Счет 75651667383060284188"
+        },
+        {  # no operation amount
+           "id": 873106923,
+           "state": "EXECUTED",
+           "date": "2019-03-23T01:09:46.296404",
+           "description": "Перевод со счета на счет",
+           "from": "Счет 44812258784861134719",
+           "to": "Счет 74489636417521191160"
+        },
+    ]
     assert list(generators.filter_by_currency(invalid_transactions_list, "NOT_SPECIFIED")) == expected
 
 
@@ -126,12 +127,12 @@ def test_transaction_descriptions_base(transactions_list):
 
 def test_transaction_descriptions_no_args() -> None:
     with pytest.raises(TypeError):
-        generators.transaction_descriptions() # type: ignore
+        generators.transaction_descriptions()  # type: ignore
 
 
 @pytest.mark.parametrize(
     "invalid_transactions_list",
-[
+    [
         [
             {
                 "id": 939719570,
@@ -182,11 +183,12 @@ def test_card_number_generator_base():
 
 def test_card_number_generator_no_args():
     with pytest.raises(TypeError):
-        generators.card_number_generator() # type: ignore
+        generators.card_number_generator()  # type: ignore
+
 
 def test_card_number_generator_invalid_args():
     with pytest.raises(TypeError):
-        next(generators.card_number_generator("123", "456")) # type: ignore
+        next(generators.card_number_generator("123", "456"))  # type: ignore
 
 
 @pytest.mark.parametrize(
