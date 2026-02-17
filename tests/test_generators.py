@@ -38,7 +38,7 @@ from src import generators
                  'to': 'Счет 14211924144426031657'}
             ],
         ),
-        ("PROCESSING", []),
+        ("EUR", []),
     ],
 )
 def test_filter_by_currency_base(transactions_list, targeted_currency, expected) -> None:
@@ -161,19 +161,23 @@ def test_transaction_descriptions_invalid_transactions_list(invalid_transactions
 
 def test_transaction_descriptions_no_key(invalid_transactions_list) -> None:
     transaction_descriptions = generators.transaction_descriptions(invalid_transactions_list)
-    assert list(transaction_descriptions) == ['NO_DESCRIPTION', 'Перевод со счета на счет', 'Перевод со счета на счет']
+    assert next(transaction_descriptions) == 'NO_DESCRIPTION'
+    assert next(transaction_descriptions) == 'Перевод со счета на счет'
+    assert next(transaction_descriptions) == 'Перевод со счета на счет'
+    with pytest.raises(StopIteration):
+        next(transaction_descriptions)
 
 
 # card_number_generator tests
 def test_card_number_generator_base():
-    expected = [
-        "0000 0000 0000 0001",
-        "0000 0000 0000 0002",
-        "0000 0000 0000 0003",
-        "0000 0000 0000 0004",
-        "0000 0000 0000 0005",
-    ]
-    assert list(generators.card_number_generator(1, 5)) == expected
+    card_numbers = generators.card_number_generator(1234123412341200, 1234123412341204)
+    assert next(card_numbers) == "1234 1234 1234 1200"
+    assert next(card_numbers) == "1234 1234 1234 1201"
+    assert next(card_numbers) == "1234 1234 1234 1202"
+    assert next(card_numbers) == "1234 1234 1234 1203"
+    assert next(card_numbers) == "1234 1234 1234 1204"
+    with pytest.raises(StopIteration):
+        next(card_numbers)
 
 
 def test_card_number_generator_no_args():
@@ -190,9 +194,25 @@ def test_card_number_generator_invalid_args():
     [
         (-1, 1),
         (1, -1),
-        (2, 1)
+        (2, 1),
+        (0, 1),
+        (99999999999999991, 99999999999999992)
     ]
 )
 def test_card_number_generator_invalid_range(start_number, stop_number):
     with pytest.raises(ValueError):
         next(generators.card_number_generator(start_number, stop_number))
+
+
+def test_card_number_generator_min():
+    card_numbers = generators.card_number_generator(1, 1)
+    assert next(card_numbers) == "0000 0000 0000 0001"
+    with pytest.raises(StopIteration):
+        next(card_numbers)
+
+
+def test_card_number_generator_max():
+    card_numbers = generators.card_number_generator(9999999999999999, 9999999999999999)
+    assert next(card_numbers) == "9999 9999 9999 9999"
+    with pytest.raises(StopIteration):
+        next(card_numbers)

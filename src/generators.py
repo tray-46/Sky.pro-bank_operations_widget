@@ -26,7 +26,7 @@ def card_number_generator(start_number: int, stop_number: int) -> Generator[str,
     """generator function for generating card numbers within a given range"""
     if not isinstance(start_number, int) or not isinstance(stop_number, int):
         raise TypeError("Invalid range parameters")
-    if start_number < 1 or stop_number < 1 or start_number > stop_number:
+    if start_number < 1 or stop_number < 1 or start_number > stop_number or stop_number > 9999999999999999:
         raise ValueError("Invalid range parameters")
     for number in range(start_number, stop_number + 1):
         card_number = f"{number:016}"
