@@ -28,12 +28,12 @@ def test_mask_account_card(number_to_mask: str, expected: str) -> None:
 
 def test_mask_account_card_no_arg() -> None:
     with pytest.raises(TypeError):
-        widget.mask_account_card()
+        widget.mask_account_card()  # type: ignore
 
 
 def test_mask_account_card_type_error() -> None:
     with pytest.raises(TypeError):
-        widget.mask_account_card(123)
+        widget.mask_account_card(123)  # type: ignore
 
 
 @pytest.mark.parametrize(
@@ -62,12 +62,12 @@ def test_get_date() -> None:
 
 def test_get_date_no_arg() -> None:
     with pytest.raises(TypeError):
-        widget.get_date()
+        widget.get_date()  # type: ignore
 
 
 def test_get_date_invalid_type() -> None:
     with pytest.raises(TypeError):
-        widget.get_date(2026)
+        widget.get_date(2026)  # type: ignore
 
 
 @pytest.mark.parametrize(
