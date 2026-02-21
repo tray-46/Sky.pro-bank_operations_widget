@@ -22,7 +22,7 @@ def log(filename: str | None = None) -> Callable:
                 log_msg = f"{function.__name__} ok"
                 if filename is not None:
                     with open(file_path, "a", encoding="utf-8") as log_file:
-                        log_file.write(log_msg)
+                        log_file.write(f"{log_msg}\n")
                 else:
                     print(log_msg)
                 return result
@@ -30,7 +30,7 @@ def log(filename: str | None = None) -> Callable:
                 log_msg = f"{function.__name__} error: {e}. Inputs: {args}, {kwargs}"
                 if filename is not None:
                     with open(file_path, "a", encoding="utf-8") as log_file:
-                        log_file.write(log_msg)
+                        log_file.write(f"{log_msg}\n")
                 else:
                     print(log_msg)
                 raise e
