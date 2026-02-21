@@ -10,6 +10,7 @@ T = TypeVar("T")
 
 def log(filename: str | None = None) -> Callable:
     """Decorator for logging function execution"""
+
     def decorator(function: Callable[P, T]) -> Callable[P, T]:
         @wraps(function)
         def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
@@ -33,5 +34,7 @@ def log(filename: str | None = None) -> Callable:
                 else:
                     print(log_msg)
                 raise e
+
         return wrapper
+
     return decorator
