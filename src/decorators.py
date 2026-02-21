@@ -9,7 +9,7 @@ T = TypeVar("T")
 
 
 def log(filename: str | None = None) -> Callable:
-    """Decorator for logging function execution"""
+    """decorator for logging function execution"""
 
     def decorator(function: Callable[P, T]) -> Callable[P, T]:
         @wraps(function)
