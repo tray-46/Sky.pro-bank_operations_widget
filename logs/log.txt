@@ -2,3 +2,5 @@ divide_function_file ok
 divide_function_file error: division by zero. Inputs: (1, 0), {}
 divide_function_file ok
 divide_function_file error: division by zero. Inputs: (1, 0), {}
+divide_function_file ok
+divide_function_file error: division by zero. Inputs: (1, 0), {}
