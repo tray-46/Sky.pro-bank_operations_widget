@@ -67,6 +67,9 @@ The following functions are implemented in the project:
 9. generator function for generating card numbers within a given range:  
 `card_number_generator`
 
+10. decorator for logging function execution
+`log`
+
 
 ### Usage examples
 Examples of using the functions can be found in the [documentation](docs/usage_examples.md).

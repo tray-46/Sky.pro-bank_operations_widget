@@ -138,3 +138,38 @@ for card_number in card_number_generator(1, 5):
 # "0000 0000 0000 0004"
 # "0000 0000 0000 0005"
 ```
+
+## decorators.py module
+1. log(filename: str | None = None) -> Callable:
+```
+@decorators.log()
+def divide_function_console(x: int | float, y: int | float) -> float:
+    """function for decorator testing"""
+    return x / y
+
+
+@decorators.log("log.txt")
+def divide_function_file(x: int | float, y: int | float) -> float:
+    """function for decorator testing"""
+    return x / y
+    
+
+print(divide_function_console(1, 2))
+# output:
+# divide_function_console ok
+# 0.5
+
+try:
+    divide_function_console(1, 0)
+except ZeroDivisionError:
+    pass
+# output:
+# divide_function_console error: division by zero. Inputs: (1, 0), {}
+
+divide_function_console(1, 2)
+try:
+    divide_function_console(1, 0)
+except ZeroDivisionError:
+    pass
+# add the same log messages to the specified file located in the 'logs' directory
+```
