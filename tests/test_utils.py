@@ -1,4 +1,5 @@
 """test_utils.py with tests for utils.py module functions"""
+
 import pathlib
 from unittest.mock import Mock, patch
 
@@ -13,15 +14,23 @@ import src.utils
 
 @patch("json.load")
 def test_load_transactions_data(mock_load: Mock) -> None:
-    file_path = str(pathlib.Path(__file__).parent.parent / 'data' / 'operations.json')
+    file_path = str(pathlib.Path(__file__).parent.parent / "data" / "operations.json")
     mock_load.return_value = 1
     assert src.utils.load_transactions_data(file_path) == []
     mock_load.return_value = []
     assert src.utils.load_transactions_data(file_path) == []
-    mock_load.return_value = [{'id': 1, }]
-    file_path = str(pathlib.Path(__file__).parent.parent / 'data' / 'operations.json')
+    mock_load.return_value = [
+        {
+            "id": 1,
+        }
+    ]
+    file_path = str(pathlib.Path(__file__).parent.parent / "data" / "operations.json")
     result = src.utils.load_transactions_data(file_path)
-    assert result == [{'id': 1, }]
+    assert result == [
+        {
+            "id": 1,
+        }
+    ]
 
 
 def test_get_transaction_amount() -> None:

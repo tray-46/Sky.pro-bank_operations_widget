@@ -17,14 +17,8 @@ def convert_to_rub(from_currency: str, amount: float) -> float:
     :return: amount converted to rubles
     """
     url = "https://api.apilayer.com/exchangerates_data/convert"
-    payload = {
-        "amount": amount,
-        "from": from_currency,
-        "to": "RUB"
-    }
-    headers = {
-        "apikey": API_KEY
-    }
+    payload = {"amount": amount, "from": from_currency, "to": "RUB"}
+    headers = {"apikey": API_KEY}
     response = requests.get(url, params=str(payload), headers=headers)
     if response.status_code == 200:
         result: float = round(response.json()["result"], 2)
