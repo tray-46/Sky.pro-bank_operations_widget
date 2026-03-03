@@ -25,7 +25,8 @@ def convert_to_rub(from_currency: str, amount: float) -> float:
     headers = {
         "apikey": API_KEY
     }
-    response = requests.get(url, params=payload, headers=headers)
+    response = requests.get(url, params=str(payload), headers=headers)
     if response.status_code == 200:
-        return round(response.json()["result"], 2)
+        result: float = round(response.json()["result"], 2)
+        return result
     raise Exception(f"Conversion failed: {from_currency} {amount}")
