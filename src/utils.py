@@ -1,6 +1,10 @@
 """modul with utility functions"""
+
 import pathlib
 import json
+
+import external_api
+
 
 def load_transactions_data(file_path_str: str) -> list[dict]:
     """
@@ -16,3 +20,17 @@ def load_transactions_data(file_path_str: str) -> list[dict]:
     if not isinstance(transactions_data, list):
         return []
     return transactions_data
+
+
+def get_transaction_amount(transaction: dict) -> float:
+    """
+    function to get transaction amount in rubles
+    transactions in other currency will be converted at the current rate
+    :param transaction: dict with transaction data
+    :return: transaction amount in rubles
+    """
+    currency_code = transaction["operationAmount"]["currency"]["code"]
+    amount = transaction["operationAmount"]["amount"]
+    if currency_code != "RUB":
+        amount = external_api.convert_to_rub(currency_code, amount)
+    return amount
