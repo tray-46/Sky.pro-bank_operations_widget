@@ -166,10 +166,40 @@ except ZeroDivisionError:
 # output:
 # divide_function_console error: division by zero. Inputs: (1, 0), {}
 
-divide_function_console(1, 2)
+divide_function_file(1, 2)
 try:
-    divide_function_console(1, 0)
+    divide_function_file(1, 0)
 except ZeroDivisionError:
     pass
 # add the same log messages to the specified file located in the 'logs' directory
+```
+
+## utils.py module
+1. load_transactions_data(file_path_str: str) -> list[dict]:
+```
+load_transactions_data("../data/operations.json")
+```
+
+2. get_transaction_amount(file_path_str: str) -> list[dict]:  
+Function uses convert_to_rub function from <a href="#external_api.py_module">external_api.py</a> module, see below
+```
+transaction = {"operationAmount": {"amount": "1", "currency": {"code": "RUB"}}}
+print(get_transaction_amount(transaction))
+# output:
+# 1
+
+transaction = {"operationAmount": {"amount": "1", "currency": {"code": "USD"}}}
+print(get_transaction_amount(transaction))
+# output:
+# 77.6
+```
+
+## external_api.py module
+1. convert_to_rub(from_currency: str, amount: float) -> float:  
+Function uses [Exchange Rates Data API](https://marketplace.apilayer.com/exchangerates_data-api) from APILayer.com  
+You will need to provide api key in '.env' file
+```
+print(convert_to_rub("USD", 1))
+# output:
+# 77.6
 ```
