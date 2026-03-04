@@ -5,11 +5,11 @@ from unittest.mock import Mock, patch
 
 import src.utils
 
-# def test_load_transactions_data_bad_file() -> None:
-#     assert src.utils.load_transactions_data("non_existing_file.json") == []
-#     mock_stat_result = Mock(st_size=0)
-#     with patch("pathlib.Path.stat", return_value=mock_stat_result):
-#         assert src.utils.load_transactions_data("../data/operations.json") == []
+def test_load_transactions_data_bad_file() -> None:
+    assert src.utils.load_transactions_data("non_existing_file.json") == []
+    mock_stat_result = Mock(st_size=0)
+    with patch("pathlib.Path.stat", return_value=mock_stat_result):
+        assert src.utils.load_transactions_data("../data/operations.json") == []
 
 
 @patch("json.load")
