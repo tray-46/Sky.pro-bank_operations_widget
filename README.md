@@ -67,9 +67,16 @@ The following functions are implemented in the project:
 9. generator function for generating card numbers within a given range:  
 `card_number_generator`
 
-10. decorator for logging function execution
-`log`
+10. decorator for logging function execution  
+`log
+`
+11. function for loading transactions data from JSON file  
+`load_transactions_data:`
 
+12. function to get transaction amount in rubles  
+`get_transaction_amount`
+13. function to convert amount in given currency to rubles  
+`convert_to_rub`
 
 ### Usage examples
 Examples of using the functions can be found in the [documentation](docs/usage_examples.md).
