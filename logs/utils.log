@@ -1,34 +1,34 @@
-2026-03-11 11:19:02,526 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: non_existing_file.json
-2026-03-11 11:19:02,526 - src.utils - INFO - Specified file was not found or is empty. Returning empty list
-2026-03-11 11:19:02,527 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: ../data/operations.json
-2026-03-11 11:19:02,528 - src.utils - INFO - Specified file was not found or is empty. Returning empty list
-2026-03-11 11:19:02,530 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,530 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,531 - src.utils - DEBUG - Loading json data
-2026-03-11 11:19:02,531 - src.utils - INFO - Data read from C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json is not a list object. Returning empty list
-2026-03-11 11:19:02,531 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,531 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,531 - src.utils - DEBUG - Loading json data
-2026-03-11 11:19:02,531 - src.utils - INFO - Data read from C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json is successful. Returning transaction list
-2026-03-11 11:19:02,531 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,532 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,532 - src.utils - DEBUG - Loading json data
-2026-03-11 11:19:02,532 - src.utils - INFO - Data read from C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json is successful. Returning transaction list
-2026-03-11 11:19:02,534 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,534 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
-2026-03-11 11:19:02,534 - src.utils - DEBUG - Loading json data
-2026-03-11 11:19:02,534 - src.utils - ERROR - Function load_transactions_data failed due to exception: Invalid JSON: line 1 column 1 (char 0). Returning empty list
-2026-03-11 11:19:02,536 - src.utils - DEBUG - Function get_transaction_amount called
-2026-03-11 11:19:02,536 - src.utils - DEBUG - Getting currency code from transaction data
-2026-03-11 11:19:02,537 - src.utils - DEBUG - Getting amount from transaction data
-2026-03-11 11:19:02,537 - src.utils - INFO - Getting transaction amount is successful. Returning amount: 1.0
-2026-03-11 11:19:02,539 - src.utils - DEBUG - Function get_transaction_amount called
-2026-03-11 11:19:02,539 - src.utils - DEBUG - Getting currency code from transaction data
-2026-03-11 11:19:02,539 - src.utils - DEBUG - Getting amount from transaction data
-2026-03-11 11:19:02,539 - src.utils - INFO - Converting amount from USD to rubles with convert_to_rub function
-2026-03-11 11:19:02,539 - src.utils - INFO - Getting transaction amount is successful. Returning amount: 1
-2026-03-11 11:19:02,541 - src.utils - DEBUG - Function get_transaction_amount called
-2026-03-11 11:19:02,541 - src.utils - DEBUG - Getting currency code from transaction data
-2026-03-11 11:19:02,541 - src.utils - DEBUG - Getting amount from transaction data
-2026-03-11 11:19:02,541 - src.utils - INFO - Converting amount from USD to rubles with convert_to_rub function
-2026-03-11 11:19:02,541 - src.utils - ERROR - Function get_transaction_amount failed due to exception: 
+2026-03-11 11:32:15,046 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: non_existing_file.json
+2026-03-11 11:32:15,046 - src.utils - INFO - Specified file was not found or is empty. Returning empty list
+2026-03-11 11:32:15,048 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: ../data/operations.json
+2026-03-11 11:32:15,048 - src.utils - INFO - Specified file was not found or is empty. Returning empty list
+2026-03-11 11:32:15,050 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,050 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,050 - src.utils - DEBUG - Loading json data
+2026-03-11 11:32:15,051 - src.utils - INFO - Data read from C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json is not a list object. Returning empty list
+2026-03-11 11:32:15,051 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,051 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,051 - src.utils - DEBUG - Loading json data
+2026-03-11 11:32:15,051 - src.utils - INFO - Data read from C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json is successful. Returning transaction list
+2026-03-11 11:32:15,051 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,051 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,051 - src.utils - DEBUG - Loading json data
+2026-03-11 11:32:15,052 - src.utils - INFO - Data read from C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json is successful. Returning transaction list
+2026-03-11 11:32:15,054 - src.utils - DEBUG - Function load_transactions_data called with file_path_str: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,054 - src.utils - DEBUG - Reading file: C:\Data\PycharmProjects\bank_operations_widget_backend\data\operations.json
+2026-03-11 11:32:15,054 - src.utils - DEBUG - Loading json data
+2026-03-11 11:32:15,054 - src.utils - ERROR - Function load_transactions_data failed due to exception: Invalid JSON: line 1 column 1 (char 0). Returning empty list
+2026-03-11 11:32:15,056 - src.utils - DEBUG - Function get_transaction_amount called
+2026-03-11 11:32:15,056 - src.utils - DEBUG - Getting currency code from transaction data
+2026-03-11 11:32:15,056 - src.utils - DEBUG - Getting amount from transaction data
+2026-03-11 11:32:15,056 - src.utils - INFO - Getting transaction amount is successful. Returning amount: 1.0
+2026-03-11 11:32:15,058 - src.utils - DEBUG - Function get_transaction_amount called
+2026-03-11 11:32:15,058 - src.utils - DEBUG - Getting currency code from transaction data
+2026-03-11 11:32:15,058 - src.utils - DEBUG - Getting amount from transaction data
+2026-03-11 11:32:15,058 - src.utils - INFO - Converting amount from USD to rubles with convert_to_rub function
+2026-03-11 11:32:15,058 - src.utils - INFO - Getting transaction amount is successful. Returning amount: 1
+2026-03-11 11:32:15,060 - src.utils - DEBUG - Function get_transaction_amount called
+2026-03-11 11:32:15,061 - src.utils - DEBUG - Getting currency code from transaction data
+2026-03-11 11:32:15,061 - src.utils - DEBUG - Getting amount from transaction data
+2026-03-11 11:32:15,061 - src.utils - INFO - Converting amount from USD to rubles with convert_to_rub function
+2026-03-11 11:32:15,061 - src.utils - ERROR - Function get_transaction_amount failed due to exception: 
