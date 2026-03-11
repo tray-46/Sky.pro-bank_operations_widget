@@ -1,3 +1,8 @@
+# logs
+!external_api.log
+!masks.log
+!utils.log
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
