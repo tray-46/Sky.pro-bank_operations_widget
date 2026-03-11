@@ -11,6 +11,7 @@ file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(m
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
+
 def get_mask_card_number(card_number: int) -> str:
     """function to get masked bank card number"""
     logger.debug(f"Function get_mask_card_number called with card_number: {card_number}")

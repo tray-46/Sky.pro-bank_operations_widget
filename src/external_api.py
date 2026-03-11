@@ -1,9 +1,9 @@
 """module with functions working with external APIs"""
 
-import os
-
 import logging
+import os
 import pathlib
+
 import requests
 from dotenv import load_dotenv
 
@@ -18,6 +18,7 @@ file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(m
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
+
 def convert_to_rub(from_currency: str, amount: float) -> float:
     """
     function to convert amount in given currency to rubles
@@ -30,14 +31,14 @@ def convert_to_rub(from_currency: str, amount: float) -> float:
     payload = {"amount": amount, "from": from_currency, "to": "RUB"}
     headers = {"apikey": API_KEY}
     try:
-        logger.info(f"Executing request to Exchange Rates Data API")
+        logger.info("Executing request to Exchange Rates Data API")
         response = requests.get(url, params=str(payload), headers=headers)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         logger.error(f"Function get_transaction_amount failed due to exception: {e}")
         raise e
     try:
-        logger.info(f"Processing the response from Exchange Rates API")
+        logger.info("Processing the response from Exchange Rates API")
         if response.status_code == 200:
             result: float = round(response.json()["result"], 2)
             logger.info(f"Function convert_to_rub completed successfully with result: {result}")
@@ -45,5 +46,5 @@ def convert_to_rub(from_currency: str, amount: float) -> float:
     except Exception as e:
         logger.error(f"Function get_transaction_amount failed due to exception: {e}")
         raise e
-    logger.error(f"Function get_transaction_amount failed")
+    logger.error("Function get_transaction_amount failed")
     raise Exception(f"Conversion failed: {from_currency} {amount}")

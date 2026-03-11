@@ -1,12 +1,13 @@
 """test_utils.py with tests for utils.py module functions"""
 
-import pathlib
 import json
+import pathlib
 from unittest.mock import Mock, patch
 
 import pytest
 
 import src.utils
+
 
 def test_load_transactions_data_bad_file() -> None:
     assert src.utils.load_transactions_data("non_existing_file.json") == []
@@ -55,7 +56,7 @@ def test_get_transaction_amount_not_rub(mock_convert_to_rub: Mock, usd_transacti
 
 
 @patch("src.external_api.convert_to_rub")
-def test_get_transaction_amount_convert_to_rub_error(mock_convert_to_rub, usd_transactions: dict) -> None:
+def test_get_transaction_amount_convert_to_rub_error(mock_convert_to_rub: Mock, usd_transactions: dict) -> None:
     mock_convert_to_rub.side_effect = Exception()
     with pytest.raises(Exception):
         src.utils.get_transaction_amount(usd_transactions)

@@ -1,10 +1,9 @@
 """test_external_api.py with tests for external_api.py module functions"""
 
+import json
 from unittest.mock import Mock, patch
 
 import pytest
-import json
-
 import requests
 
 import src.external_api
@@ -38,7 +37,6 @@ def test_convert_to_rub_invalid_response_json(mock_get: Mock) -> None:
     mock_get.return_value.json.side_effect = json.JSONDecodeError("Invalid JSON", "usd 1", 0)
     with pytest.raises(json.JSONDecodeError):
         src.external_api.convert_to_rub("USD", 1)
-
 
 
 def test_convert_to_rub_negative() -> None:
