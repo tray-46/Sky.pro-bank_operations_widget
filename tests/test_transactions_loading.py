@@ -18,9 +18,15 @@ def test_load_transactions_data_csv_bad_file() -> None:
 @patch("pandas.read_csv")
 def test_load_transactions_data_csv(mock_load: Mock) -> None:
     sample_data = [
-        {"id": 1, },
-        {"id": 2, },
-        {"id": 3, },
+        {
+            "id": 1,
+        },
+        {
+            "id": 2,
+        },
+        {
+            "id": 3,
+        },
     ]
     mock_load.return_value = pd.DataFrame(sample_data)
     file_path = str(pathlib.Path(__file__).parent.parent / "data" / "transactions.csv")
@@ -46,9 +52,15 @@ def test_load_transactions_data_xlsx_bad_file() -> None:
 @patch("pandas.read_excel")
 def test_load_transactions_data_xlsx(mock_load: Mock) -> None:
     sample_data = [
-        {"id": 1, },
-        {"id": 2, },
-        {"id": 3, },
+        {
+            "id": 1,
+        },
+        {
+            "id": 2,
+        },
+        {
+            "id": 3,
+        },
     ]
     mock_load.return_value = pd.DataFrame(sample_data)
     file_path = str(pathlib.Path(__file__).parent.parent / "data" / "transactions_excel.xlsx")
