@@ -113,3 +113,8 @@ def invalid_transactions_list() -> list:
             "to": "Счет 74489636417521191160",
         },
     ]
+
+
+@pytest.fixture
+def usd_transactions() -> dict:
+    return {"operationAmount": {"amount": "1", "currency": {"code": "USD"}}}
