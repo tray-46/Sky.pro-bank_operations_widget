@@ -1,8 +1,9 @@
 """test_transactions_loading.py with tests for transactions_loading.py module functions"""
 
 import pathlib
-import pandas as pd
 from unittest.mock import Mock, patch
+
+import pandas as pd
 
 import src.transactions_loading
 
@@ -25,6 +26,7 @@ def test_load_transactions_data_csv(mock_load: Mock) -> None:
     file_path = str(pathlib.Path(__file__).parent.parent / "data" / "transactions.csv")
     result = src.transactions_loading.load_transactions_data_csv(file_path)
     assert result == sample_data
+
 
 @patch("pandas.read_csv")
 def test_load_transactions_data_csv_error(mock_load: Mock) -> None:
@@ -52,6 +54,7 @@ def test_load_transactions_data_xlsx(mock_load: Mock) -> None:
     file_path = str(pathlib.Path(__file__).parent.parent / "data" / "transactions_excel.xlsx")
     result = src.transactions_loading.load_transactions_data_xlsx(file_path)
     assert result == sample_data
+
 
 @patch("pandas.read_excel")
 def test_load_transactions_data_xlsx_error(mock_load: Mock) -> None:

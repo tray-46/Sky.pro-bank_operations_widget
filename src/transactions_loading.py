@@ -1,9 +1,9 @@
 """module with functions for loading transactions data from CSV and XLSX files"""
 
 import logging
-import pandas as pd
 import pathlib
 
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
