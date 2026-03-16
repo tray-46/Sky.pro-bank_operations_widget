@@ -1,19 +1,19 @@
-2026-03-11 11:32:14,923 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
-2026-03-11 11:32:14,923 - src.external_api - INFO - Executing request to Exchange Rates Data API
-2026-03-11 11:32:14,923 - src.external_api - INFO - Processing the response from Exchange Rates API
-2026-03-11 11:32:14,924 - src.external_api - INFO - Function convert_to_rub completed successfully with result: 75.5
-2026-03-11 11:32:14,926 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
-2026-03-11 11:32:14,926 - src.external_api - INFO - Executing request to Exchange Rates Data API
-2026-03-11 11:32:14,926 - src.external_api - ERROR - Function get_transaction_amount failed due to exception: Mocked connection error
-2026-03-11 11:32:14,928 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
-2026-03-11 11:32:14,928 - src.external_api - INFO - Executing request to Exchange Rates Data API
-2026-03-11 11:32:14,929 - src.external_api - INFO - Processing the response from Exchange Rates API
-2026-03-11 11:32:14,929 - src.external_api - ERROR - Function get_transaction_amount failed due to exception: 'result'
-2026-03-11 11:32:14,931 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
-2026-03-11 11:32:14,931 - src.external_api - INFO - Executing request to Exchange Rates Data API
-2026-03-11 11:32:14,932 - src.external_api - INFO - Processing the response from Exchange Rates API
-2026-03-11 11:32:14,932 - src.external_api - ERROR - Function get_transaction_amount failed due to exception: Invalid JSON: line 1 column 1 (char 0)
-2026-03-11 11:32:14,934 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: -1
-2026-03-11 11:32:14,934 - src.external_api - INFO - Executing request to Exchange Rates Data API
-2026-03-11 11:32:14,934 - src.external_api - INFO - Processing the response from Exchange Rates API
-2026-03-11 11:32:14,934 - src.external_api - ERROR - Function get_transaction_amount failed
+2026-03-16 14:27:25,086 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
+2026-03-16 14:27:25,087 - src.external_api - INFO - Executing request to Exchange Rates Data API
+2026-03-16 14:27:25,087 - src.external_api - INFO - Processing the response from Exchange Rates API
+2026-03-16 14:27:25,088 - src.external_api - INFO - Function convert_to_rub completed successfully with result: 75.5
+2026-03-16 14:27:25,089 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
+2026-03-16 14:27:25,089 - src.external_api - INFO - Executing request to Exchange Rates Data API
+2026-03-16 14:27:25,090 - src.external_api - ERROR - Function get_transaction_amount failed due to exception: Mocked connection error
+2026-03-16 14:27:25,091 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
+2026-03-16 14:27:25,092 - src.external_api - INFO - Executing request to Exchange Rates Data API
+2026-03-16 14:27:25,092 - src.external_api - INFO - Processing the response from Exchange Rates API
+2026-03-16 14:27:25,092 - src.external_api - ERROR - Function get_transaction_amount failed due to exception: 'result'
+2026-03-16 14:27:25,094 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: 1
+2026-03-16 14:27:25,094 - src.external_api - INFO - Executing request to Exchange Rates Data API
+2026-03-16 14:27:25,095 - src.external_api - INFO - Processing the response from Exchange Rates API
+2026-03-16 14:27:25,095 - src.external_api - ERROR - Function get_transaction_amount failed due to exception: Invalid JSON: line 1 column 1 (char 0)
+2026-03-16 14:27:25,096 - src.external_api - DEBUG - Function convert_to_rub called with from_currency: USD and amount: -1
+2026-03-16 14:27:25,097 - src.external_api - INFO - Executing request to Exchange Rates Data API
+2026-03-16 14:27:25,097 - src.external_api - INFO - Processing the response from Exchange Rates API
+2026-03-16 14:27:25,097 - src.external_api - ERROR - Function get_transaction_amount failed

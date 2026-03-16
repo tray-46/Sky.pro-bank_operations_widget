@@ -1,54 +1,54 @@
-2026-03-11 11:32:14,983 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
-2026-03-11 11:32:14,984 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7000 79** **** 6361
-2026-03-11 11:32:14,987 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
-2026-03-11 11:32:14,987 - src.masks - ERROR - Invalid card number: integer expected, got: <class 'str'>
-2026-03-11 11:32:14,989 - src.masks - DEBUG - Function get_mask_card_number called with card_number: -7000792289606361
-2026-03-11 11:32:14,990 - src.masks - ERROR - Invalid card number: positive integer expected
-2026-03-11 11:32:14,992 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 12345678901234567
-2026-03-11 11:32:14,992 - src.masks - ERROR - Invalid card number: 16 digits number expected
-2026-03-11 11:32:14,994 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 1
-2026-03-11 11:32:14,994 - src.masks - ERROR - Invalid card number: 16 digits number expected
-2026-03-11 11:32:14,996 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
-2026-03-11 11:32:14,996 - src.masks - INFO - Function get_mask_account completed successfully with result: **4305
-2026-03-11 11:32:14,999 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
-2026-03-11 11:32:14,999 - src.masks - ERROR - Invalid account number: integer expected
-2026-03-11 11:32:15,002 - src.masks - DEBUG - Function get_mask_account called with account_number: -73654108430135874305
-2026-03-11 11:32:15,002 - src.masks - ERROR - Invalid account number: positive integer expected, got: <class 'int'>
-2026-03-11 11:32:15,004 - src.masks - DEBUG - Function get_mask_account called with account_number: 123456789012345678901
-2026-03-11 11:32:15,004 - src.masks - ERROR - Invalid account number: 20 digits number expected
-2026-03-11 11:32:15,006 - src.masks - DEBUG - Function get_mask_account called with account_number: 1
-2026-03-11 11:32:15,006 - src.masks - ERROR - Invalid account number: 20 digits number expected
-2026-03-11 11:32:15,064 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
-2026-03-11 11:32:15,064 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7000 79** **** 6361
-2026-03-11 11:32:15,066 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
-2026-03-11 11:32:15,066 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7000 79** **** 6361
-2026-03-11 11:32:15,068 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
-2026-03-11 11:32:15,068 - src.masks - INFO - Function get_mask_account completed successfully with result: **4305
-2026-03-11 11:32:15,070 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 1596837868705199
-2026-03-11 11:32:15,070 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 1596 83** **** 5199
-2026-03-11 11:32:15,072 - src.masks - DEBUG - Function get_mask_account called with account_number: 64686473678894779589
-2026-03-11 11:32:15,072 - src.masks - INFO - Function get_mask_account completed successfully with result: **9589
-2026-03-11 11:32:15,074 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7158300734726758
-2026-03-11 11:32:15,074 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7158 30** **** 6758
-2026-03-11 11:32:15,077 - src.masks - DEBUG - Function get_mask_account called with account_number: 35383033474447895560
-2026-03-11 11:32:15,077 - src.masks - INFO - Function get_mask_account completed successfully with result: **5560
-2026-03-11 11:32:15,079 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 6831982476737658
-2026-03-11 11:32:15,080 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 6831 98** **** 7658
-2026-03-11 11:32:15,082 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 8990922113665229
-2026-03-11 11:32:15,082 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 8990 92** **** 5229
-2026-03-11 11:32:15,084 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 5999414228426353
-2026-03-11 11:32:15,084 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 5999 41** **** 6353
-2026-03-11 11:32:15,086 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
-2026-03-11 11:32:15,086 - src.masks - INFO - Function get_mask_account completed successfully with result: **4305
-2026-03-11 11:32:15,098 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 70007922896063611
-2026-03-11 11:32:15,098 - src.masks - ERROR - Invalid card number: 16 digits number expected
-2026-03-11 11:32:15,101 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 1
-2026-03-11 11:32:15,101 - src.masks - ERROR - Invalid card number: 16 digits number expected
-2026-03-11 11:32:15,103 - src.masks - DEBUG - Function get_mask_card_number called with card_number: -1
-2026-03-11 11:32:15,103 - src.masks - ERROR - Invalid card number: positive integer expected
-2026-03-11 11:32:15,105 - src.masks - DEBUG - Function get_mask_account called with account_number: 736541084301358743051
-2026-03-11 11:32:15,105 - src.masks - ERROR - Invalid account number: 20 digits number expected
-2026-03-11 11:32:15,109 - src.masks - DEBUG - Function get_mask_account called with account_number: 1
-2026-03-11 11:32:15,109 - src.masks - ERROR - Invalid account number: 20 digits number expected
-2026-03-11 11:32:15,111 - src.masks - DEBUG - Function get_mask_account called with account_number: -1
-2026-03-11 11:32:15,111 - src.masks - ERROR - Invalid account number: positive integer expected, got: <class 'int'>
+2026-03-16 14:27:25,135 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
+2026-03-16 14:27:25,135 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2026-03-16 14:27:25,138 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
+2026-03-16 14:27:25,138 - src.masks - ERROR - Invalid card number: integer expected, got: <class 'str'>
+2026-03-16 14:27:25,140 - src.masks - DEBUG - Function get_mask_card_number called with card_number: -7000792289606361
+2026-03-16 14:27:25,140 - src.masks - ERROR - Invalid card number: positive integer expected
+2026-03-16 14:27:25,141 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 12345678901234567
+2026-03-16 14:27:25,141 - src.masks - ERROR - Invalid card number: 16 digits number expected
+2026-03-16 14:27:25,142 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 1
+2026-03-16 14:27:25,143 - src.masks - ERROR - Invalid card number: 16 digits number expected
+2026-03-16 14:27:25,144 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
+2026-03-16 14:27:25,144 - src.masks - INFO - Function get_mask_account completed successfully with result: **4305
+2026-03-16 14:27:25,146 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
+2026-03-16 14:27:25,147 - src.masks - ERROR - Invalid account number: integer expected
+2026-03-16 14:27:25,149 - src.masks - DEBUG - Function get_mask_account called with account_number: -73654108430135874305
+2026-03-16 14:27:25,149 - src.masks - ERROR - Invalid account number: positive integer expected, got: <class 'int'>
+2026-03-16 14:27:25,150 - src.masks - DEBUG - Function get_mask_account called with account_number: 123456789012345678901
+2026-03-16 14:27:25,150 - src.masks - ERROR - Invalid account number: 20 digits number expected
+2026-03-16 14:27:25,152 - src.masks - DEBUG - Function get_mask_account called with account_number: 1
+2026-03-16 14:27:25,152 - src.masks - ERROR - Invalid account number: 20 digits number expected
+2026-03-16 14:27:25,220 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
+2026-03-16 14:27:25,221 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2026-03-16 14:27:25,222 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7000792289606361
+2026-03-16 14:27:25,223 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7000 79** **** 6361
+2026-03-16 14:27:25,224 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
+2026-03-16 14:27:25,224 - src.masks - INFO - Function get_mask_account completed successfully with result: **4305
+2026-03-16 14:27:25,226 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 1596837868705199
+2026-03-16 14:27:25,226 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 1596 83** **** 5199
+2026-03-16 14:27:25,227 - src.masks - DEBUG - Function get_mask_account called with account_number: 64686473678894779589
+2026-03-16 14:27:25,227 - src.masks - INFO - Function get_mask_account completed successfully with result: **9589
+2026-03-16 14:27:25,229 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 7158300734726758
+2026-03-16 14:27:25,229 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 7158 30** **** 6758
+2026-03-16 14:27:25,230 - src.masks - DEBUG - Function get_mask_account called with account_number: 35383033474447895560
+2026-03-16 14:27:25,231 - src.masks - INFO - Function get_mask_account completed successfully with result: **5560
+2026-03-16 14:27:25,232 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 6831982476737658
+2026-03-16 14:27:25,232 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 6831 98** **** 7658
+2026-03-16 14:27:25,234 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 8990922113665229
+2026-03-16 14:27:25,234 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 8990 92** **** 5229
+2026-03-16 14:27:25,235 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 5999414228426353
+2026-03-16 14:27:25,235 - src.masks - INFO - Function get_mask_card_number completed successfully with result: 5999 41** **** 6353
+2026-03-16 14:27:25,237 - src.masks - DEBUG - Function get_mask_account called with account_number: 73654108430135874305
+2026-03-16 14:27:25,237 - src.masks - INFO - Function get_mask_account completed successfully with result: **4305
+2026-03-16 14:27:25,247 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 70007922896063611
+2026-03-16 14:27:25,247 - src.masks - ERROR - Invalid card number: 16 digits number expected
+2026-03-16 14:27:25,249 - src.masks - DEBUG - Function get_mask_card_number called with card_number: 1
+2026-03-16 14:27:25,249 - src.masks - ERROR - Invalid card number: 16 digits number expected
+2026-03-16 14:27:25,251 - src.masks - DEBUG - Function get_mask_card_number called with card_number: -1
+2026-03-16 14:27:25,251 - src.masks - ERROR - Invalid card number: positive integer expected
+2026-03-16 14:27:25,255 - src.masks - DEBUG - Function get_mask_account called with account_number: 736541084301358743051
+2026-03-16 14:27:25,255 - src.masks - ERROR - Invalid account number: 20 digits number expected
+2026-03-16 14:27:25,256 - src.masks - DEBUG - Function get_mask_account called with account_number: 1
+2026-03-16 14:27:25,256 - src.masks - ERROR - Invalid account number: 20 digits number expected
+2026-03-16 14:27:25,258 - src.masks - DEBUG - Function get_mask_account called with account_number: -1
+2026-03-16 14:27:25,258 - src.masks - ERROR - Invalid account number: positive integer expected, got: <class 'int'>
