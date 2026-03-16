@@ -75,8 +75,15 @@ The following functions are implemented in the project:
 
 12. function to get transaction amount in rubles  
 `get_transaction_amount`
+
 13. function to convert amount in given currency to rubles  
 `convert_to_rub`
+
+14. function for loading transactions data from CSV file  
+`load_transactions_data_csv:`
+
+15. function for loading transactions data from XLSX file  
+`load_transactions_data_xlsx:`
 
 ### Usage examples
 Examples of using the functions can be found in the [documentation](docs/usage_examples.md).
