@@ -203,3 +203,14 @@ print(convert_to_rub("USD", 1))
 # output:
 # 77.6
 ```
+
+## transactions_loading.py module
+1. load_transactions_data_csv(file_path_str: str) -> list[dict]:
+```
+load_transactions_data("../data/transactions.csv")
+```
+
+2. load_transactions_data_xlsx(file_path_str: str) -> list[dict]:
+```
+load_transactions_data("../data/transactions_excel.xlsx")
+```
