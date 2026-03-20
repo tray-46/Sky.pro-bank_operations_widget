@@ -1,5 +1,7 @@
 """test_processing.py with tests for processing.py module functions"""
 
+import typing
+
 import pytest
 
 from src import processing
@@ -17,18 +19,18 @@ def test_filter_by_state_base(bank_operation_list: list[dict]) -> None:
     "targeted_state, expected",
     [
         (
-                "EXECUTED",
-                [
-                    {"id": 414288290, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-                    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-                ],
+            "EXECUTED",
+            [
+                {"id": 414288290, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+                {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+            ],
         ),
         (
-                "CANCELED",
-                [
-                    {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
-                    {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
-                ],
+            "CANCELED",
+            [
+                {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+                {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
+            ],
         ),
         ("PROCESSING", []),
     ],
@@ -121,17 +123,17 @@ def test_sort_by_date_invalid_date_strings(invalid_date_strings: list) -> None:
         (
             "счет",
             [
-                {"id": 939719570, "description": "Перевод со счета на счет",},
-                {"id": 142264268, "description": "Перевод с карты на счет",}
+                {"id": 939719570, "description": "Перевод со счета на счет", },
+                {"id": 142264268, "description": "Перевод с карты на счет", }
             ]
         ),
         (
             "Перевод",
             [
-                {"id": 441945886, "description": "Перевод организации",},
-                {"id": 939719570, "description": "Перевод со счета на счет",},
-                {"id": 587085106, "description": "Перевод с карты на карту",},
-                {"id": 142264268, "description": "Перевод с карты на счет",}
+                {"id": 441945886, "description": "Перевод организации", },
+                {"id": 939719570, "description": "Перевод со счета на счет", },
+                {"id": 587085106, "description": "Перевод с карты на карту", },
+                {"id": 142264268, "description": "Перевод с карты на счет", }
             ],
         ),
         ("Non_existing_operation", []),
@@ -140,17 +142,21 @@ def test_sort_by_date_invalid_date_strings(invalid_date_strings: list) -> None:
 def test_filter_by_description(operations_to_filter: list[dict], description_part: str, expected: list[dict]) -> None:
     assert processing.filter_by_description(operations_to_filter, description_part) == expected
 
+
 def test_filter_by_description_no_args() -> None:
     with pytest.raises(TypeError):
         processing.filter_by_description()  # type: ignore
+
 
 @pytest.mark.parametrize(
     "invalid_operation_list",
     [
         (
-            [{"id": 414288290, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-            "{ id : 939719570,  state :  EXECUTED ,  date :  2018-06-30T02:08:58.425572}",
-            594226727,]
+            [
+                {"id": 414288290, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+                "{id : 939719570,  state :  EXECUTED ,  date :  2018-06-30T02:08:58.425572}",
+                594226727,
+            ]
         ),
         (),
         (123,),
@@ -160,14 +166,14 @@ def test_filter_by_description_invalid_list_dict(invalid_operation_list: list) -
     with pytest.raises(TypeError):
         processing.filter_by_description(invalid_operation_list, "счет")
 
+
 @pytest.mark.parametrize(
     "invalid_category",
     [
         (1,),
-        ([1,2]),
+        ([1, 2]),
     ],
 )
-def test_filter_by_description_description(operations_to_filter: list[dict], invalid_category) -> None:
+def test_filter_by_description_description(operations_to_filter: list[dict], invalid_category: typing.Any) -> None:
     with pytest.raises(TypeError):
         processing.filter_by_description(operations_to_filter, invalid_category)  # type: ignore
-

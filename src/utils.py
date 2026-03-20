@@ -64,28 +64,30 @@ def get_transaction_amount(transaction: dict) -> float:
         raise e
 
 
-def get_operations_count(operations_list: list[dict], categories: list[str] = None) -> dict:
+def get_operations_count(operations_list: list[dict], categories: list[str] | None = None) -> dict:
     """
     function to get operations count for specified categories
     :param operations_list: list of dict with operations data
-    :param categories: list of str with operations categories names to count, if not specified - all categories will be counted
+    :param categories: list of str with operations categories names to count,
+    if not specified - all categories will be counted
     :return: dict with categories names as keys and number of operations in each category as values
     """
     logger.debug(f"Function get_operations_count called with categories: {categories}")
     if not isinstance(operations_list, list) or not all(isinstance(operation, dict) for operation in operations_list):
-        logger.error(f"Invalid operations list")
+        logger.error("Invalid operations list")
         raise TypeError("Invalid operations list")
-    if categories is not None and (not isinstance(categories, list) or not all(isinstance(category, str) for category in categories)):
-        logger.error(f"Invalid categories list")
+    if (categories is not None
+            and (not isinstance(categories, list) or not all(isinstance(category, str) for category in categories))):
+        logger.error("Invalid categories list")
         raise TypeError("Invalid 'categories' value type")
     operations_count = collections.Counter(
         [operation.get("description", "NO_DESCRIPTION") for operation in operations_list])
     if categories is None:
-        logger.info(f"Categories to count not specified. Returning stats for all found categories.")
+        logger.info("Categories to count not specified. Returning stats for all found categories.")
         return operations_count
     else:
         result = dict()
         for category in categories:
-                result[category] = operations_count.get(category, 0)
-        logger.info(f"Returning stats for specified categories.")
+            result[category] = operations_count.get(category, 0)
+        logger.info("Returning stats for specified categories.")
         return result

@@ -5,7 +5,6 @@ import logging
 import pathlib
 import re
 
-
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 log_file_path = str(pathlib.Path(__file__).parent.parent / "logs" / "utils.log")
@@ -31,10 +30,10 @@ def filter_by_description(operations_list: list[dict], description_part: str) ->
     """
     logger.debug(f"Function filter_by_description called with description_part: {description_part}")
     if not isinstance(operations_list, list) or not all(isinstance(operation, dict) for operation in operations_list):
-        logger.error(f"Invalid operations list")
+        logger.error("Invalid operations list")
         raise TypeError("Invalid operations list")
     if not isinstance(description_part, str):
-        logger.error(f"Invalid 'description' value type")
+        logger.error("Invalid 'description' value type")
         raise TypeError("Invalid 'description' value type")
     description_pattern = re.compile(description_part, re.IGNORECASE)
     logger.info(f"Returning operations with \"{description_part}\" in description.")
@@ -60,4 +59,3 @@ def sort_by_date(operations_list: list[dict], *, descending_sorting: bool = True
     except ValueError:
         raise ValueError("Invalid 'date' value format")
     return sorted_operations_list
-

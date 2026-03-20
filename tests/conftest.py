@@ -119,6 +119,7 @@ def invalid_transactions_list() -> list:
 def usd_transactions() -> dict:
     return {"operationAmount": {"amount": "1", "currency": {"code": "USD"}}}
 
+
 @pytest.fixture
 def operations_to_filter() -> list:
     return [
