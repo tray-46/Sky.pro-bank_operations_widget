@@ -118,3 +118,28 @@ def invalid_transactions_list() -> list:
 @pytest.fixture
 def usd_transactions() -> dict:
     return {"operationAmount": {"amount": "1", "currency": {"code": "USD"}}}
+
+@pytest.fixture
+def operations_to_filter() -> list:
+    return [
+        {
+            "id": 441945886,
+            "description": "Перевод организации",
+        },
+        {
+            "id": 41428829,
+            "description": "Открытие вклада",
+        },
+        {
+            "id": 939719570,
+            "description": "Перевод со счета на счет",
+        },
+        {
+            "id": 587085106,
+            "description": "Перевод с карты на карту",
+        },
+        {
+            "id": 142264268,
+            "description": "Перевод с карты на счет",
+        },
+    ]
