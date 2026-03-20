@@ -91,7 +91,6 @@ def test_get_operations_count(operations_to_filter: list[dict]) -> None:
     ],
 )
 def test_get_operations_count_with_categories(operations_to_filter: list[dict], categories, expected) -> None:
-
     assert src.utils.get_operations_count(operations_to_filter, categories) == expected
 
 @pytest.mark.parametrize(
