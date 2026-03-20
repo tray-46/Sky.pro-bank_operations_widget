@@ -77,15 +77,33 @@ def test_get_operations_count(operations_to_filter: list[dict]) -> None:
 @pytest.mark.parametrize(
     "categories,expected",
     [
-        (["Перевод организации"], {"Перевод организации": 1, }),
-        (["Открытие вклада", "Перевод со счета на счет", "Перевод с карты на карту"],
-         {"Открытие вклада": 1, "Перевод со счета на счет": 1, "Перевод с карты на карту": 1, }),
-        (["Открытие вклада", "Перевод со счета на счет", "Non_existing_operation"],
-         {"Открытие вклада": 1, "Перевод со счета на счет": 1, "Non_existing_operation": 0, }),
+        (
+            ["Перевод организации"],
+            {
+                "Перевод организации": 1,
+            },
+        ),
+        (
+            ["Открытие вклада", "Перевод со счета на счет", "Перевод с карты на карту"],
+            {
+                "Открытие вклада": 1,
+                "Перевод со счета на счет": 1,
+                "Перевод с карты на карту": 1,
+            },
+        ),
+        (
+            ["Открытие вклада", "Перевод со счета на счет", "Non_existing_operation"],
+            {
+                "Открытие вклада": 1,
+                "Перевод со счета на счет": 1,
+                "Non_existing_operation": 0,
+            },
+        ),
     ],
 )
-def test_get_operations_count_with_categories(operations_to_filter: list[dict],
-                                              categories: list, expected: dict) -> None:
+def test_get_operations_count_with_categories(
+    operations_to_filter: list[dict], categories: list, expected: dict
+) -> None:
     assert src.utils.get_operations_count(operations_to_filter, categories) == expected
 
 

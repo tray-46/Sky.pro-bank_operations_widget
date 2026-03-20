@@ -36,9 +36,12 @@ def filter_by_description(operations_list: list[dict], description_part: str) ->
         logger.error("Invalid 'description' value type")
         raise TypeError("Invalid 'description' value type")
     description_pattern = re.compile(description_part, re.IGNORECASE)
-    logger.info(f"Returning operations with \"{description_part}\" in description.")
-    return [operation for operation in operations_list
-            if description_pattern.search(operation.get("description", "NO_DESCRIPTION"))]
+    logger.info(f'Returning operations with "{description_part}" in description.')
+    return [
+        operation
+        for operation in operations_list
+        if description_pattern.search(operation.get("description", "NO_DESCRIPTION"))
+    ]
 
 
 def sort_by_date(operations_list: list[dict], *, descending_sorting: bool = True) -> list[dict]:

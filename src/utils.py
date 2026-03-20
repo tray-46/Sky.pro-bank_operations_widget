@@ -1,4 +1,5 @@
 """modul with utility functions"""
+
 import collections
 import json
 import logging
@@ -76,12 +77,14 @@ def get_operations_count(operations_list: list[dict], categories: list[str] | No
     if not isinstance(operations_list, list) or not all(isinstance(operation, dict) for operation in operations_list):
         logger.error("Invalid operations list")
         raise TypeError("Invalid operations list")
-    if (categories is not None
-            and (not isinstance(categories, list) or not all(isinstance(category, str) for category in categories))):
+    if categories is not None and (
+        not isinstance(categories, list) or not all(isinstance(category, str) for category in categories)
+    ):
         logger.error("Invalid categories list")
         raise TypeError("Invalid 'categories' value type")
     operations_count = collections.Counter(
-        [operation.get("description", "NO_DESCRIPTION") for operation in operations_list])
+        [operation.get("description", "NO_DESCRIPTION") for operation in operations_list]
+    )
     if categories is None:
         logger.info("Categories to count not specified. Returning stats for all found categories.")
         return operations_count
