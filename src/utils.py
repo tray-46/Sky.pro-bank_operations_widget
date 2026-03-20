@@ -1,5 +1,5 @@
 """modul with utility functions"""
-
+import collections
 import json
 import logging
 import pathlib
@@ -48,8 +48,8 @@ def get_transaction_amount(transaction: dict) -> float:
     :param transaction: dict with transaction data
     :return: transaction amount in rubles
     """
+    logger.debug("Function get_transaction_amount called")
     try:
-        logger.debug("Function get_transaction_amount called")
         logger.debug("Getting currency code from transaction data")
         currency_code = transaction["operationAmount"]["currency"]["code"]
         logger.debug("Getting amount from transaction data")
@@ -62,3 +62,30 @@ def get_transaction_amount(transaction: dict) -> float:
     except Exception as e:
         logger.error(f"Function get_transaction_amount failed due to exception: {e}")
         raise e
+
+
+def get_operations_count(operations_list: list[dict], categories: list[str] = None) -> dict:
+    """
+    function to get operations count for specified categories
+    :param operations_list: list of dict with operations data
+    :param categories: list of str with operations categories names to count, if not specified - all categories will be counted
+    :return: dict with categories names as keys and number of operations in each category as values
+    """
+    logger.debug(f"Function get_operations_count called with categories: {categories}")
+    if not isinstance(operations_list, list) or not all(isinstance(operation, dict) for operation in operations_list):
+        logger.error(f"Invalid operations list")
+        raise TypeError("Invalid operations list")
+    if categories is not None and (not isinstance(categories, list) or all(isinstance(category, str) for category in categories)):
+        logger.error(f"Invalid categories list")
+        raise TypeError("Invalid 'categories' value type")
+    operations_count = collections.Counter(
+        [operation.get("description", "NO_DESCRIPTION") for operation in operations_list])
+    if categories is None:
+        logger.info(f"Categories to count not specified. Returning stats for all found categories.")
+        return operations_count
+    else:
+        result = dict()
+        for category in categories:
+                result[category] = operations_count.get(category, 0)
+        logger.info(f"Returning stats for specified categories.")
+        return result
