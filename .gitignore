@@ -215,8 +215,3 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-
-# logs
-!external_api.log
-!masks.log
-!utils.log
