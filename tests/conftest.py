@@ -153,74 +153,44 @@ def operations_list() -> list:
             "id": 441945886,
             "state": "EXECUTED",
             "date": "2026-03-20T15:15:15.151515",
-            "operationAmount": {
-                "amount": "11.11",
-                "currency": {
-                    "name": "руб.",
-                    "code": "RUB"
-                }
-            },
+            "operationAmount": {"amount": "11.11", "currency": {"name": "руб.", "code": "RUB"}},
             "description": "Перевод организации",
             "from": "Maestro 1596837868705199",
-            "to": "Счет 64686473678894779589"
+            "to": "Счет 64686473678894779589",
         },
         {
             "id": 939719570,
             "state": "PENDING",
             "date": "2026-03-19T15:15:15.151515",
-            "operationAmount": {
-                "amount": "9824.07",
-                "currency": {
-                    "name": "USD",
-                    "code": "USD"
-                }
-            },
+            "operationAmount": {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"}},
             "description": "Перевод со счета на счет",
             "from": "Счет 75106830613657916952",
-            "to": "Счет 11776614605963066702"
+            "to": "Счет 11776614605963066702",
         },
         {
             "id": 587085106,
             "state": "EXECUTED",
             "date": "2026-03-19T14:14:14.141414",
-            "operationAmount": {
-                "amount": "48223.05",
-                "currency": {
-                    "name": "руб.",
-                    "code": "RUB"
-                }
-            },
+            "operationAmount": {"amount": "48223.05", "currency": {"name": "руб.", "code": "RUB"}},
             "description": "Открытие вклада",
-            "to": "Счет 41421565395219882431"
+            "to": "Счет 41421565395219882431",
         },
         {
             "id": 142264268,
             "state": "CANCELED",
             "date": "2026-03-18T15:15:15.151515",
-            "operationAmount": {
-                "amount": "79114.93",
-                "currency": {
-                    "name": "USD",
-                    "code": "USD"
-                }
-            },
+            "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
             "description": "Перевод с карты на карту",
             "from": "Счет 19708645243227258542",
-            "to": "Счет 75651667383060284188"
+            "to": "Счет 75651667383060284188",
         },
         {
             "id": 873106923,
             "state": "EXECUTED",
             "date": "2026-03-18T13:13:13.131313",
-            "operationAmount": {
-                "amount": "43318.34",
-                "currency": {
-                    "name": "руб.",
-                    "code": "RUB"
-                }
-            },
+            "operationAmount": {"amount": "43318.34", "currency": {"name": "руб.", "code": "RUB"}},
             "description": "Перевод с карты на счет",
             "from": "Счет 44812258784861134719",
-            "to": "Счет 74489636417521191160"
+            "to": "Счет 74489636417521191160",
         },
     ]
