@@ -6,6 +6,9 @@ from src.widget import get_date, mask_account_card
 
 
 def main() -> None:
+    """
+    main function of the application
+    """
     print("\nДобро пожаловать в программу работы с банковскими транзакциями.\n")
     user_input = None
     while user_input not in ["1", "2", "3"]:
