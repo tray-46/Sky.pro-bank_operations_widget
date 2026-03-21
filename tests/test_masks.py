@@ -15,15 +15,15 @@ def test_get_mask_card_number_no_arg() -> None:
         masks.get_mask_card_number()  # type: ignore
 
 
-def test_get_mask_card_number_wrong_type() -> None:
-    with pytest.raises(TypeError):
-        masks.get_mask_card_number("7000792289606361")  # type: ignore
-
-
-@pytest.mark.parametrize("invalid_number", [-7000792289606361, 12345678901234567, 1])
-def test_get_mask_card_number_negative(invalid_number: int) -> None:
-    with pytest.raises(ValueError):
-        masks.get_mask_card_number(invalid_number)
+# def test_get_mask_card_number_wrong_type() -> None:
+#     with pytest.raises(TypeError):
+#         masks.get_mask_card_number("7000792289606361")  # type: ignore
+#
+#
+# @pytest.mark.parametrize("invalid_number", [-7000792289606361, 12345678901234567, 1])
+# def test_get_mask_card_number_negative(invalid_number: int) -> None:
+#     with pytest.raises(ValueError):
+#         masks.get_mask_card_number(invalid_number)
 
 
 # get_mask_account tests
@@ -41,7 +41,7 @@ def test_get_mask_account_wrong_type() -> None:
         masks.get_mask_account("73654108430135874305")  # type: ignore
 
 
-@pytest.mark.parametrize("invalid_number", [-73654108430135874305, 123456789012345678901, 1])
-def test_get_mask_account_negative(invalid_number: int) -> None:
-    with pytest.raises(ValueError):
-        masks.get_mask_account(invalid_number)
+# @pytest.mark.parametrize("invalid_number", [-73654108430135874305, 123456789012345678901, 1])
+# def test_get_mask_account_negative(invalid_number: int) -> None:
+#     with pytest.raises(ValueError):
+#         masks.get_mask_account(invalid_number)

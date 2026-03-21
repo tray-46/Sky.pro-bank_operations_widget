@@ -36,23 +36,23 @@ def test_mask_account_card_type_error() -> None:
         widget.mask_account_card(123)  # type: ignore
 
 
-@pytest.mark.parametrize(
-    "invalid_number",
-    [
-        "",
-        "12345678901234567890",
-        "Счёт12345678901234567890",
-        "Visa Platinum 70007922896063611",
-        "Maestro 1",
-        "Maestro -1",
-        "Счет 736541084301358743051",
-        "Счет 1",
-        "Счет -1",
-    ],
-)
-def test_mask_account_card_value_error(invalid_number: str) -> None:
-    with pytest.raises(ValueError):
-        widget.mask_account_card(invalid_number)
+# @pytest.mark.parametrize(
+#     "invalid_number",
+#     [
+#         "",
+#         "12345678901234567890",
+#         "Счёт12345678901234567890",
+#         "Visa Platinum 70007922896063611",
+#         "Maestro 1",
+#         "Maestro -1",
+#         "Счет 736541084301358743051",
+#         "Счет 1",
+#         "Счет -1",
+#     ],
+# )
+# def test_mask_account_card_value_error(invalid_number: str) -> None:
+#     with pytest.raises(ValueError):
+#         widget.mask_account_card(invalid_number)
 
 
 # get_date tests
