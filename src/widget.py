@@ -8,7 +8,7 @@ from src import masks
 def mask_account_card(string_to_mask: str) -> str:
     """function to get masked bank account or card number"""
     if not isinstance(string_to_mask, str):
-        raise TypeError("Invalid account/card number string")
+        raise TypeError(f"Invalid account/card number string {string_to_mask} {type(string_to_mask)}")
     string_parts = string_to_mask.split()
     if len(string_parts) < 2:
         raise ValueError("Invalid account/card number")
@@ -17,7 +17,7 @@ def mask_account_card(string_to_mask: str) -> str:
             account_number = int(string_parts[-1])
             return f"{string_parts[0]} {masks.get_mask_account(account_number)}"
         except ValueError:
-            raise ValueError("Invalid account number")
+            raise ValueError(f"Invalid account number: {account_number}")
     else:
         try:
             card_number = int(string_parts[-1])
@@ -34,5 +34,9 @@ def get_date(date_string: str) -> str:
     try:
         datetime_date = datetime.datetime.strptime(date_string, datetime_format)
     except ValueError:
-        raise ValueError("Invalid date format")
+        datetime_format = "%Y-%m-%dT%H:%M:%SZ"
+        try:
+            datetime_date = datetime.datetime.strptime(date_string, datetime_format)
+        except ValueError:
+            raise ValueError("Invalid date format")
     return datetime_date.strftime("%d.%m.%Y")

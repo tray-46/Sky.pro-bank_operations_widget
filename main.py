@@ -20,9 +20,11 @@ def main() -> None:
         )
 
     operations_list = list()
+    is_json_data_structure = False
     if user_input == "1":
         print("\nДля обработки выбран JSON-файл.\n")
         operations_list = load_transactions_data("./data/operations.json")
+        is_json_data_structure = True
     elif user_input == "2":
         print("Для обработки выбран CSV-файл.")
         operations_list = load_transactions_data_csv("./data/transactions.csv")
@@ -81,10 +83,19 @@ def main() -> None:
 
         for operation in result_list:
             print(f"{get_date(operation.get("date", "1970-01-01T00:00:00.0"))} {operation.get("description")}")
-            print(f"{f"{mask_account_card(operation.get("from", ""))} -> " if operation.get("from")
-                     else ""}{mask_account_card(operation.get("to", ""))}")
-            operation_amount = operation.get("operationAmount", {}).get("amount", 0)
-            currency_code = operation.get("operationAmount", {}).get("currency", {}).get("code", "NOT_SPECIFIED")
+            if operation.get("description") == "Открытие вклада":
+                print(f"{mask_account_card(operation.get("to", ""))}")
+            else:
+                print(
+                    f"{mask_account_card(operation.get("from", ""))} -> "
+                    f"{mask_account_card(operation.get("to", ""))}"
+                )
+            if is_json_data_structure:
+                operation_amount = operation.get("operationAmount", {}).get("amount", 0)
+                currency_code = operation.get("operationAmount", {}).get("currency", {}).get("code", "NOT_SPECIFIED")
+            else:
+                operation_amount = operation.get("amount", 0)
+                currency_code = operation.get("currency_code", "NOT_SPECIFIED")
             print(f"Сумма: {f"{operation_amount} руб." if currency_code == "RUB"
                             else f"{operation_amount} {currency_code}"}\n")
     else:
