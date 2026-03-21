@@ -11,11 +11,17 @@ def filter_by_currency(transactions_list: list[dict], targeted_currency_code: st
         or not isinstance(targeted_currency_code, str)
     ):
         raise TypeError("Invalid transactions list")
-    return filter(
-        lambda transaction: transaction.get("operationAmount", {}).get("currency", {}).get("code", "NOT_SPECIFIED")
-        == targeted_currency_code,
-        transactions_list,
-    )
+    if "operationAmount" in transactions_list[0]:
+        return filter(
+            lambda transaction: transaction.get("operationAmount", {}).get("currency", {}).get("code", "NOT_SPECIFIED")
+            == targeted_currency_code,
+            transactions_list,
+        )
+    else:
+        return filter(
+            lambda transaction: transaction.get("currency_code", "NOT_SPECIFIED") == targeted_currency_code,
+            transactions_list,
+        )
 
 
 def transaction_descriptions(transactions_list: list[dict]) -> Generator[str, None, None]:

@@ -59,7 +59,25 @@ filter_by_state(bank_operation_list, "CANCELED")
 # ]
 ```
 
-2. sort_by_date(operations_list: list[dict], *, descending_sorting: bool = True) -> list[dict]
+2. filter_by_description(operations_list: list[dict], description_part: str) -> list[dict]:
+```
+operations = [
+    {"id": 441945886, "description": "Перевод организации", },
+    {"id": 41428829, "description": "Открытие вклада", },
+    {"id": 939719570, "description": "Перевод со счета на счет", },
+    {"id": 587085106, "description": "Перевод с карты на карту", },
+    {"id": 142264268, "description": "Перевод с карты на счет", },
+]
+
+filter_by_description(operations, "счет")
+# output:
+# [
+#     {"id": 939719570, "description": "Перевод со счета на счет", },
+#     {"id": 142264268, "description": "Перевод с карты на счет", },
+# ]
+```
+
+3. sort_by_date(operations_list: list[dict], *, descending_sorting: bool = True) -> list[dict]
 ```
 bank_operation_list = [
     {"id": 414288290, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -192,6 +210,35 @@ transaction = {"operationAmount": {"amount": "1", "currency": {"code": "USD"}}}
 print(get_transaction_amount(transaction))
 # output:
 # 77.6
+```
+
+3. get_operations_count(operations_list: list[dict], categories: list[str] | None = None) -> dict:
+```
+operations = [
+    {"id": 441945886, "description": "Перевод организации", },
+    {"id": 41428829, "description": "Открытие вклада", },
+    {"id": 939719570, "description": "Перевод со счета на счет", },
+    {"id": 587085106, "description": "Перевод с карты на карту", },
+    {"id": 142264268, "description": "Перевод с карты на счет", },
+]
+
+get_operations_count(operations)
+# output 
+# {
+#     "Перевод организации": 1,
+#     "Открытие вклада": 1,
+#     "Перевод со счета на счет": 1,
+#     "Перевод с карты на карту": 1,
+#     "Перевод с карты на счет": 1,
+# }
+
+get_operations_count(operations, ["Открытие вклада", "Перевод со счета на счет", "Non_existing_operation"])
+# output 
+# {
+#     "Открытие вклада": 1,
+#     "Перевод со счета на счет": 1,
+#     "Non_existing_operation": 0,
+# }
 ```
 
 ## external_api.py module

@@ -38,6 +38,8 @@ To clone the repository use the following links:
     git@github.com:tray-46/Sky.pro-bank_operations_widget.git
 ```
 
+To run the application, execute main.py module.
+
 ## Usage
 The following functions are implemented in the project:
 1. function to get masked bank card number:  
@@ -84,6 +86,15 @@ The following functions are implemented in the project:
 
 15. function for loading transactions data from XLSX file  
 `load_transactions_data_xlsx:`
+
+16. function for filtering operations list by part of description  
+`filter_by_description`
+
+17. function to get operations count for specified categories  
+`get_operations_count`
+
+18. main function of the application
+`main`
 
 ### Usage examples
 Examples of using the functions can be found in the [documentation](docs/usage_examples.md).
