@@ -30,13 +30,11 @@ def get_date(date_string: str) -> str:
     """function to get formatted date string. required format is 'dd.mm.yyyy'"""
     if not isinstance(date_string, str):
         raise TypeError("Invalid date string")
-    datetime_format = "%Y-%m-%dT%H:%M:%S.%f"
-    try:
-        datetime_date = datetime.datetime.strptime(date_string, datetime_format)
-    except ValueError:
-        datetime_format = "%Y-%m-%dT%H:%M:%SZ"
+    datetime_formats = ["%Y-%m-%dT%H:%M:%S.%f", "%Y-%m-%dT%H:%M:%SZ"]
+    for datetime_format in datetime_formats:
         try:
             datetime_date = datetime.datetime.strptime(date_string, datetime_format)
+            return datetime_date.strftime("%d.%m.%Y")
         except ValueError:
-            raise ValueError("Invalid date format")
-    return datetime_date.strftime("%d.%m.%Y")
+            continue
+    raise ValueError("Invalid date format")

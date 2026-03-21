@@ -22,9 +22,11 @@ def get_mask_card_number(card_number: int) -> str:
         logger.error("Invalid card number: positive integer expected")
         raise ValueError("Invalid card number")
     str_card_number = str(card_number)
-    if len(str_card_number) != 16:  # нужна проверка на 16 или реализация для номеров 12 - 19 ?
-        logger.error(f"Invalid card number: 16 digits number expected - {str_card_number}")
-        # raise ValueError("Invalid card number")
+    # if len(str_card_number) != 16:  # нужна проверка на 16 или реализация для номеров 12 - 19 ?
+    #     logger.error(f"Invalid card number: 16 digits number expected - {str_card_number}")
+    if not 11 < len(str_card_number) < 20:
+        logger.error("Invalid card number")
+        raise ValueError("Invalid cad number")
     asterisk_number = len(str_card_number) - 12
     result = (
         str_card_number[0:4] + " " + str_card_number[4:6] + "** " + "*" * asterisk_number + " " + str_card_number[-4:]
@@ -42,9 +44,11 @@ def get_mask_account(account_number: int) -> str:
     if account_number < 0:
         logger.error(f"Invalid account number: positive integer expected, got: {type(account_number)}")
         raise ValueError("Invalid account number")
-    if len(str(account_number)) != 20:  # или номер может быть другой длинны?
-        logger.error(f"Invalid account number: 20 digits number expected - {account_number}")
-        # raise ValueError("Invalid card number")
+    # if len(str(account_number)) != 20:  # или номер может быть другой длинны?
+    #     logger.error(f"Invalid account number: 20 digits number expected - {account_number}")
+    if not 5 < len(str(account_number)) < 35:
+        logger.error("Invalid account number")
+        raise ValueError("Invalid card number")
     result = "**" + str(account_number)[-4:]
     logger.info(f"Function get_mask_account completed successfully with result: {result}")
     return result

@@ -71,6 +71,94 @@ def test_filter_by_currency_base(transactions_list: list[dict], targeted_currenc
     assert list(generators.filter_by_currency(transactions_list, targeted_currency)) == expected
 
 
+# filter_by_currency tests
+@pytest.mark.parametrize(
+    "targeted_currency, expected",
+    [
+        (
+            "USD",
+            [
+                {
+                    "id": 939719570,
+                    "state": "EXECUTED",
+                    "date": "2018-06-30T02:08:58.425572",
+                    "amount": "9824.07",
+                    "name": "USD",
+                    "currency_code": "USD",
+                    "description": "Перевод организации",
+                    "from": "Счет 75106830613657916952",
+                    "to": "Счет 11776614605963066702",
+                },
+                {
+                    "id": 142264268,
+                    "state": "EXECUTED",
+                    "date": "2019-04-04T23:20:05.206878",
+                    "amount": "79114.93",
+                    "name": "USD",
+                    "currency_code": "USD",
+                    "description": "Перевод со счета на счет",
+                    "from": "Счет 19708645243227258542",
+                    "to": "Счет 75651667383060284188",
+                },
+                {
+                    "id": 895315941,
+                    "state": "EXECUTED",
+                    "date": "2018-08-19T04:27:37.904916",
+                    "amount": "56883.54",
+                    "name": "USD",
+                    "currency_code": "USD",
+                    "description": "Перевод с карты на карту",
+                    "from": "Visa Classic 6831982476737658",
+                    "to": "Visa Platinum 8990922113665229",
+                },
+            ],
+        ),
+        (
+            "RUB",
+            [
+                {
+                    "id": 873106923,
+                    "state": "EXECUTED",
+                    "date": "2019-03-23T01:09:46.296404",
+                    "amount": "43318.34",
+                    "name": "руб.",
+                    "currency_code": "RUB",
+                    "description": "Перевод со счета на счет",
+                    "from": "Счет 44812258784861134719",
+                    "to": "Счет 74489636417521191160",
+                },
+                {
+                    "id": 594226727,
+                    "state": "CANCELED",
+                    "date": "2018-09-12T21:27:25.241689",
+                    "amount": "67314.70",
+                    "name": "руб.",
+                    "currency_code": "RUB",
+                    "description": "Перевод организации",
+                    "from": "Visa Platinum 1246377376343588",
+                    "to": "Счет 14211924144426031657",
+                },
+                {
+                    "amount": "48223.05",
+                    "currency_code": "RUB",
+                    "date": "2026-03-19T14:14:14.141414",
+                    "description": "Открытие вклада",
+                    "id": 587085106,
+                    "name": "руб.",
+                    "state": "EXECUTED",
+                    "to": "Счет 41421565395219882431",
+                },
+            ],
+        ),
+        ("EUR", []),
+    ],
+)
+def test_filter_by_currency_base_csv_xlsx_formsa(
+    transactions_list_csv_xlsx_format: list[dict], targeted_currency: str, expected: list[dict]
+) -> None:
+    assert list(generators.filter_by_currency(transactions_list_csv_xlsx_format, targeted_currency)) == expected
+
+
 def test_filter_by_currency_no_args() -> None:
     with pytest.raises(TypeError):
         generators.filter_by_currency()  # type: ignore
